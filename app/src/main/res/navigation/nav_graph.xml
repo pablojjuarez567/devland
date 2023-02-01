@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/filtradoFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.devland.fragments.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_detallesProyectoOtroFragment"
+            app:destination="@id/detallesProyectoOtroFragment" />
+        <argument
+            android:name="lista_proyectos"
+            app:argType="com.example.devland.clases.Proyecto[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallesProyectoMioFragment"
+        android:name="com.example.devland.fragments.DetallesProyectoMioFragment"
+        android:label="fragment_detalles_proyecto_mio"
+        tools:layout="@layout/fragment_detalles_proyecto_mio" >
+        <argument
+            android:name="proyecto"
+            app:argType="com.example.devland.clases.Proyecto" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallesProyectoOtroFragment"
+        android:name="com.example.devland.fragments.DetallesProyectoOtroFragment"
+        android:label="fragment_detalles_proyecto_otro"
+        tools:layout="@layout/fragment_detalles_proyecto_otro" >
+        <argument
+            android:name="proyecto"
+            app:argType="com.example.devland.clases.Proyecto" />
+    </fragment>
+    <fragment
+        android:id="@+id/misProyectosFragment"
+        android:name="com.example.devland.fragments.MisProyectosFragment"
+        android:label="fragment_mis_proyectos"
+        tools:layout="@layout/fragment_mis_proyectos" >
+        <argument
+            android:name="listaProyectos"
+            app:argType="com.example.devland.clases.Proyecto[]" />
+        <action
+            android:id="@+id/action_misProyectosFragment_to_detallesProyectoMioFragment"
+            app:destination="@id/detallesProyectoMioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.devland.fragments.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/configPerfilFragment"
+        android:name="com.example.devland.fragments.ConfigPerfilFragment"
+        android:label="fragment_config_perfil"
+        tools:layout="@layout/fragment_config_perfil" />
+    <fragment
+        android:id="@+id/crearProyectoFragment"
+        android:name="com.example.devland.fragments.CrearProyectoFragment"
+        android:label="fragment_crear_proyecto"
+        tools:layout="@layout/fragment_crear_proyecto" />
+    <fragment
+        android:id="@+id/editarProyectoFragment"
+        android:name="com.example.devland.fragments.EditarProyectoFragment"
+        android:label="fragment_editar_proyecto"
+        tools:layout="@layout/fragment_editar_proyecto" />
+    <fragment
+        android:id="@+id/verProyectoMasTardeFragment"
+        android:name="com.example.devland.fragments.VerProyectoMasTardeFragment"
+        android:label="fragment_ver_proyecto_mas_tarde"
+        tools:layout="@layout/fragment_ver_proyecto_mas_tarde" >
+        <argument
+            android:name="listaProyectos"
+            app:argType="com.example.devland.clases.Proyecto[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtradoFragment"
+        android:name="com.example.devland.fragments.FiltradoFragment"
+        android:label="FiltradoFragment" >
+        <action
+            android:id="@+id/action_filtradoFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+</navigation>

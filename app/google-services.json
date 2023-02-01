@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "705513974816",
+    "project_id": "devland-2f5e9",
+    "storage_bucket": "devland-2f5e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705513974816:android:0e78f5e2f800fb963d2045",
+        "android_client_info": {
+          "package_name": "com.example.devland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705513974816-fq0tj7gtsgbg3mqnp4djlf6gqjpi88o1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZLNW6yjk3xgCOEFx99z4HSwfRNbdRBc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705513974816-fq0tj7gtsgbg3mqnp4djlf6gqjpi88o1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
