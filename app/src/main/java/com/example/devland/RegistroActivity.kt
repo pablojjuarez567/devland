@@ -50,6 +50,7 @@ class RegistroActivity : AppCompatActivity() {
             if(registro(nombre, apellido ,contraseña , repPasword , email, conEmail, descripcion) ){
 
                 val usuario: Usuario
+                //TODO: Revisar esto que tiene pinta de fallar por todas partes
                 Usuario(0,nombre,apellido,email,contraseña,false,descripcion,0,null,null,null)
 
                 goToFeed()
