@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.devland.clases.Proyecto
 import com.example.devland.clases.Usuario
 
 class RegistroActivity : AppCompatActivity() {
@@ -50,8 +51,10 @@ class RegistroActivity : AppCompatActivity() {
             if(registro(nombre, apellido ,contraseña , repPasword , email, conEmail, descripcion) ){
 
                 val usuario: Usuario
-                //TODO: Revisar esto que tiene pinta de fallar por todas partes
-                Usuario(0,nombre,apellido,email,contraseña,false,descripcion,0,null,null,null)
+                val arrayProyecto = ArrayList<Proyecto>()
+                val arrayInt = ArrayList<Int>()
+
+                MainActivity.usuario = Usuario(10,nombre,apellido,email,contraseña,false,descripcion)
 
                 goToFeed()
             }

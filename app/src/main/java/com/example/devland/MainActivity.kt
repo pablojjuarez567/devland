@@ -10,17 +10,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-
+    companion object{
+        var usuario: Usuario? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
 
-        val bundle = Bundle()
-        bundle.putParcelableArray("lista_proyectos", crearArrayProyectos())
 
-        val navController = findNavController(R.id.fragmentContainerView)
-        navController.navigate(R.id.feedFragment, bundle)
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)

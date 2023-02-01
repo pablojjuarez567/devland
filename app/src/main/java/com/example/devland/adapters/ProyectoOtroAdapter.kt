@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.devland.fragments.FeedFragmentDirections
 import com.example.devland.R
 import com.example.devland.clases.Proyecto
+import com.example.devland.fragments.MisProyectosFragment
+import com.example.devland.fragments.MisProyectosFragmentDirections
 
 class ProyectoOtroAdapter(var listaProyectos:Array<Proyecto>)
     : RecyclerView.Adapter<ProyectoOtroAdapter.ViewHolder>(){
@@ -32,8 +34,6 @@ class ProyectoOtroAdapter(var listaProyectos:Array<Proyecto>)
 
         holder.cardView.setOnClickListener {
 
-            //TODO: Borrar este toast
-            Toast.makeText(holder.itemView.context, "Proyecto seleccionado: ${listaProyectos[position].nombre}", Toast.LENGTH_SHORT).show()
 
             val action = FeedFragmentDirections.actionFeedFragmentToDetallesProyectoOtroFragment(listaProyectos[position])
             holder.itemView.findNavController().navigate(action)

@@ -12,7 +12,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/recycler_view_feed"
+            android:id="@+id/recycler_view_mios"
             android:orientation="vertical"
             tools:listitem="@layout/adapter_proyecto_mio"/>
 

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.devland.fragments.MisProyectosFragmentArgs
 import com.example.devland.R
+import com.example.devland.adapters.ProyectoMioAdapter
 import com.example.devland.adapters.ProyectoOtroAdapter
 
 
@@ -17,7 +18,7 @@ class MisProyectosFragment : Fragment() {
 
     val args: MisProyectosFragmentArgs by navArgs()
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapterCarta: ProyectoOtroAdapter
+    private lateinit var adapterCarta: ProyectoMioAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +35,10 @@ class MisProyectosFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.recycler_view_ver_mas_tarde)
+        recyclerView = view.findViewById(R.id.recycler_view_mios)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapterCarta = ProyectoOtroAdapter(args.listaProyectos)
+        adapterCarta = ProyectoMioAdapter(args.listaProyectos)
         recyclerView.adapter = adapterCarta
 
     }

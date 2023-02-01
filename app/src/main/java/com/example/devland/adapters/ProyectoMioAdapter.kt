@@ -34,12 +34,7 @@ class ProyectoMioAdapter(var listaProyectos:Array<Proyecto>)
 
         holder.cardView.setOnClickListener {
 
-            //TODO: Borrar este toast
-            Toast.makeText(
-                holder.itemView.context,
-                "Proyecto seleccionado: ${listaProyectos[position].nombre}",
-                Toast.LENGTH_SHORT
-            ).show()
+
 
             val action =
                 MisProyectosFragmentDirections.actionMisProyectosFragmentToDetallesProyectoMioFragment(

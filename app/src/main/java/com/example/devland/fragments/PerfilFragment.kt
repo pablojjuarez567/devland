@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.example.devland.MainActivity
 import com.example.devland.R
 
 
@@ -25,6 +27,17 @@ class PerfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO: Cargar los datos del usuario en los campos correspondientes
+        val textViewNombre = view.findViewById<TextView>(R.id.nombre_y_apellidos)
+        val textViewEmail = view.findViewById<TextView>(R.id.email)
+        val textViewDescripcion = view.findViewById<TextView>(R.id.descripcion)
+
+        val usuario = MainActivity.usuario
+
+        if (usuario != null) {
+            textViewNombre.text = usuario.nombre + " " + usuario.apellidos
+            textViewEmail.text = usuario.email
+            textViewDescripcion.text = usuario.descripcion
+        }
+
     }
 }
