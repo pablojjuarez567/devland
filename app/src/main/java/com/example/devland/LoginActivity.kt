@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import com.example.devland.fragments.FeedFragment
 
 class LoginActivity : AppCompatActivity() {
     private var etEmail: EditText? = null
@@ -22,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etContraseña)
@@ -63,7 +64,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String): Boolean {
-        var valido = false
+        //todo: cambiar a false
+        var valido = true
         if (!comprobarCorreo(email)) {
             Toast.makeText(
                 this,
