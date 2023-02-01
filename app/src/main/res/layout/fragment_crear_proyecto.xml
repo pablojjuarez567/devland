@@ -195,41 +195,6 @@
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                 <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="126dp"
-                    android:layout_height="42dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Situacion del proyecto: "
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/numero_tiempo" />
-
-                <CheckBox
-                    android:id="@+id/nuevo"
-                    android:layout_width="90dp"
-                    android:layout_height="38dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Nuevo"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@+id/textView14"
-                    app:layout_constraintTop_toBottomOf="@+id/numero_tiempo"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <CheckBox
-                    android:id="@+id/empezado"
-                    android:layout_width="105dp"
-                    android:layout_height="38dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="24dp"
-                    android:text="Empezado"
-                    android:textColor="@color/black"
-                    app:layout_constraintStart_toEndOf="@+id/nuevo"
-                    app:layout_constraintTop_toBottomOf="@+id/tipo"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -254,16 +219,15 @@
                 <EditText
                     android:id="@+id/nombre_nuevoProyecto"
                     android:layout_width="270dp"
-                    android:layout_height="40dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="13dp"
                     android:layout_marginTop="20dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
                     android:text="Nombre"
+                    android:inputType="text"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toEndOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/guardarProyectover"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    app:layout_constraintTop_toBottomOf="@+id/guardarProyectover" />
 
                 <EditText
                     android:id="@+id/cantidad_nuevoProyecto"
@@ -313,8 +277,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/nuevo"
-                    app:layout_constraintVertical_bias="0.726"
+                    app:layout_constraintTop_toTopOf="@+id/numero_tiempo"
                     tools:ignore="MissingConstraints" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
