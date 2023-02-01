@@ -2,18 +2,14 @@ package com.example.devland.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.text.TextUtils
 import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.Switch
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -27,6 +23,15 @@ import kotlinx.android.synthetic.main.fragment_crear_proyecto.*
 
 class CrearProyectoFragment : Fragment() {
 
+    private var nombreProyecto: EditText? = null
+    private var ubicacionProyecto : Spinner? = null
+    private var cantidadProyecto : EditText? = null
+    private var descripcionProyecto : EditText? = null
+    private var tecnologiaProyecto : Spinner? = null
+    private var idiomaProyecto : Spinner? = null
+    private var tiempo :EditText? = null
+    private var tipo: Spinner? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +43,9 @@ class CrearProyectoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
 
         val spinner = view.findViewById<Spinner>(R.id.tecnologia_nuevoProyecto)
         val spinner2 = view.findViewById<Spinner>(R.id.idioma_nuevoProyecto)
@@ -62,19 +70,33 @@ class CrearProyectoFragment : Fragment() {
         val btnCrear = view.findViewById<Button>(R.id.crear)
         btnCrear.setOnClickListener {
 
-
-            var nombreProyecto = R.id.nombre_nuevoProyecto
-            var ubicacionProyecto = R.id.ubicacion_nuevoProyecto.toString()
-            var cantidadProyecto = R.id.cantidad_nuevoProyecto
-            var descripcionProyecto = R.id.descripcion_nuevoProyecto.toString()
-            var tecnologiaProyecto = R.id.tecnologia_nuevoProyecto.toString()
-            var idiomaProyecto = R.id.idioma_nuevoProyecto.toString()
+            var nombreProyecto = view.findViewById<EditText>(R.id.nombre_nuevoProyecto)
+            var ubicacionProyecto =view.findViewById<Spinner> (R.id.ubicacion_nuevoProyecto)
+            var cantidadProyecto =view.findViewById<EditText> (R.id.cantidad_nuevoProyecto)
+            var descripcionProyecto = view.findViewById<EditText>(R.id.descripcion_nuevoProyecto)
+            var tecnologiaProyecto = view.findViewById<Spinner>(R.id.tecnologia_nuevoProyecto)
+            var idiomaProyecto =view.findViewById<Spinner> (R.id.idioma_nuevoProyecto)
             var fechaActual = System.currentTimeMillis().toString()
-            var tiempo = R.id.numero_tiempo.toString() + " " + R.id.tipo.toString()
+            var tiempo =view.findViewById<EditText>(R.id.numero_tiempo)
+            var tipo = view.findViewById<Spinner>(R.id.tipo)
 
-            comprobarnombre(nombreProyecto.toString())
-            comprobartiempo(tiempo)
-            comprobardescripcion(descripcionProyecto)
+
+
+
+            val nombreP = nombreProyecto!!.text.toString()
+            val cantidadP = cantidadProyecto!!.text.toString()
+            val descripcionP = descripcionProyecto!!.text.toString()
+            val time = tiempo!!.text.toString()
+
+            var cantidadPI = cantidadP.toInt()
+
+            val tiempoProyecto = time + " " + onItemSelected(tipo,view ,0, 0)
+
+
+
+            comprobarnombre(nombreP.toString())
+            comprobartiempo(tiempo.toString())
+            comprobardescripcion(descripcionProyecto.toString())
 
 
             var proyecto: Proyecto
@@ -87,11 +109,11 @@ class CrearProyectoFragment : Fragment() {
                 null)
 
             proyecto = Proyecto(0,
-                nombreProyecto.toString(),descripcionProyecto,tecnologiaProyecto,ubicacionProyecto,
-                boxchecker(presencial_modo_nuevoProyecto,teletrabajo_modo_nuevoProyecto),idiomaProyecto,tiempo,switchchecker(estado_nuevoProyecto),cantidadProyecto,
-                usuarioPrueba,usuarioPrueba.id,0,fechaActual)
+                nombreP,descripcionP,onItemSelected(tecnologiaProyecto, 0),onItemSelected(ubicacionProyecto, 0),
+                boxchecker(presencial_modo_nuevoProyecto,teletrabajo_modo_nuevoProyecto),onItemSelected(idiomaProyecto,0),tiempoProyecto,switchchecker(estado_nuevoProyecto),cantidadPI,
+               null,usuarioPrueba.id,0,fechaActual)
 
-            println(proyecto)
+            println(proyecto.toString())
 
         }
     }
@@ -118,6 +140,13 @@ class CrearProyectoFragment : Fragment() {
         }
         return "Mixto"
 
+    }
+    fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long): String {
+        // Obtener el elemento seleccionado en el spinner
+        val selectedItem = parent?.getItemAtPosition(position) as String
+        // Hacer algo con el elemento seleccionado
+
+        return selectedItem
     }
 
     private fun comprobarnombre(nombre: String): Boolean {
