@@ -3,8 +3,10 @@ package com.example.devland
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.devland.clases.Proyecto
 import com.example.devland.clases.Usuario
+import com.example.devland.fragments.FeedFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -22,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
+
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener  { item ->
             when (item.itemId) {
@@ -34,15 +39,15 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.feedFragment, bundle)
                 }
                 R.id.item_2 -> {
+                    val navController = findNavController(R.id.fragmentContainerView)
+                    navController.navigate(R.id.crearProyectoFragment)
+                }
+                R.id.item_3 -> {
                     val bundle = Bundle()
                     bundle.putParcelableArray("listaProyectos", crearArrayProyectos())
 
                     val navController = findNavController(R.id.fragmentContainerView)
                     navController.navigate(R.id.misProyectosFragment, bundle)
-                }
-                R.id.item_3 -> {
-                    val navController = findNavController(R.id.fragmentContainerView)
-                    navController.navigate(R.id.crearProyectoFragment)
                 }
                 R.id.item_4 -> {
                     val navController = findNavController(R.id.fragmentContainerView)

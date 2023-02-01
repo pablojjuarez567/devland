@@ -35,6 +35,7 @@ class ProyectoOtroAdapter(var listaProyectos:Array<Proyecto>)
         holder.cardView.setOnClickListener {
 
 
+            
             val action = FeedFragmentDirections.actionFeedFragmentToDetallesProyectoOtroFragment(listaProyectos[position])
             holder.itemView.findNavController().navigate(action)
         }
