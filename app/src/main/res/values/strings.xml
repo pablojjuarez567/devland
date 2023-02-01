@@ -2,4 +2,43 @@
     <string name="app_name">Devland</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tecnologias">
+        <item>C</item>
+        <item>C+</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Kotling</item>
+        <item>HTML y CSS</item>
+        <item>Python</item>
+    </string-array>
+
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>Frances</item>
+        <item>Ingles</item>
+        <item>Aleman</item>
+        <item>Portugues</item>
+        <item>Italiano</item>
+        <item>Chino</item>
+        <item>Japones</item>
+    </string-array>
+
+    <string-array name="tiempo">
+        <item>Dia</item>
+        <item>Mes</item>
+        <item>Año</item>
+    </string-array>
+
+    <string-array name="ubicacion">
+        <item>Málaga</item>
+        <item>Sevilla</item>
+        <item>Granada</item>
+        <item>Almeria</item>
+        <item>Huelva</item>
+        <item>Cordoba</item>
+        <item>Cadiz</item>
+        <item>Madrid</item>
+    </string-array>
 </resources>

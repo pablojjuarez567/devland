@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.item_3 -> {
                     val navController = findNavController(R.id.fragmentContainerView)
-                    navController.navigate(R.id.configPerfilFragment)
+                    navController.navigate(R.id.crearProyectoFragment)
                 }
                 R.id.item_4 -> {
                     val navController = findNavController(R.id.fragmentContainerView)
