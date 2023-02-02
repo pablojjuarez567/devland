@@ -12,19 +12,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    companion object{
-        var usuario: Usuario? = null
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
-
-
-
-
-
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -44,7 +36,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.item_3 -> {
                     val bundle = Bundle()
-                    bundle.putParcelableArray("listaProyectos", crearArrayProyectos())
+
+                    var proyectos = LoginActivity.usuario!!.proyectosCreados
+                    val arrayProyectos=pasarMutableListAArray(proyectos)
+
+
+
+
+                    bundle.putParcelableArray("listaProyectos", arrayProyectos)
 
                     val navController = findNavController(R.id.fragmentContainerView)
                     navController.navigate(R.id.misProyectosFragment, bundle)
@@ -76,6 +75,16 @@ class MainActivity : AppCompatActivity() {
             array[i-1] = proyecto
         }
         return array
+    }
+
+    fun pasarMutableListAArray(lista: MutableList<Proyecto>?): Array<Proyecto>{
+        val arrayProyectos:Array<Proyecto> = Array(lista!!.size){Proyecto()}
+
+        for (i in 0 until lista.size){
+            arrayProyectos[i] = lista[i]
+        }
+
+        return arrayProyectos
     }
 
 

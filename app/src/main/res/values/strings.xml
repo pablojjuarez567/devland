@@ -5,13 +5,16 @@
 
     <string-array name="tecnologias">
         <item>C</item>
-        <item>C+</item>
         <item>C++</item>
         <item>C#</item>
         <item>Java</item>
-        <item>Kotling</item>
+        <item>Kotlin</item>
         <item>HTML y CSS</item>
         <item>Python</item>
+        <item>PHP</item>
+        <item>JavaScript</item>
+        <item>SQL</item>
+        <item>Swift</item>
     </string-array>
 
     <string-array name="idiomas">
@@ -23,6 +26,9 @@
         <item>Italiano</item>
         <item>Chino</item>
         <item>Japones</item>
+        <item>Ruso</item>
+        <item>Arabe</item>
+        <item>Coreano</item>
     </string-array>
 
     <string-array name="tiempo">
@@ -40,5 +46,6 @@
         <item>Cordoba</item>
         <item>Cadiz</item>
         <item>Madrid</item>
+        <item>Barcelona</item>
     </string-array>
 </resources>

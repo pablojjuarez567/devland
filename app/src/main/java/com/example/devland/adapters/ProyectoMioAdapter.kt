@@ -34,10 +34,7 @@ class ProyectoMioAdapter(var listaProyectos:Array<Proyecto>)
 
         holder.cardView.setOnClickListener {
 
-
-
-            val action =
-                MisProyectosFragmentDirections.actionMisProyectosFragmentToDetallesProyectoMioFragment(
+            val action = MisProyectosFragmentDirections.actionMisProyectosFragmentToDetallesProyectoMioFragment(
                     listaProyectos[position]
                 )
             holder.itemView.findNavController().navigate(action)

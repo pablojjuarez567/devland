@@ -94,6 +94,7 @@
 
         <TextView
             android:id="@+id/textDescripcion"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
@@ -109,8 +110,8 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="29dp"
             android:ems="10"
-            android:gravity="start|top"
             android:inputType="textMultiLine"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescripcion"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -121,7 +122,9 @@
             android:layout_height="24dp"
             android:layout_marginStart="161dp"
             android:layout_marginTop="8dp"
+            android:textSize="20dp"
             android:text="Tecnologias"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descripcion" />
 
@@ -131,6 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="15dp"
+            android:textAlignment="center"
             android:text="Unity,C,C++"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textTecnologias" />

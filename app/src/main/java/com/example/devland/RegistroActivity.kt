@@ -54,7 +54,7 @@ class RegistroActivity : AppCompatActivity() {
                 val arrayProyecto = ArrayList<Proyecto>()
                 val arrayInt = ArrayList<Int>()
 
-                MainActivity.usuario = Usuario(10,nombre,apellido,email,contraseña,false,descripcion)
+                LoginActivity.usuario = Usuario(10,nombre,apellido,email,contraseña,false,descripcion)
 
                 goToFeed()
             }

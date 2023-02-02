@@ -11,6 +11,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.example.devland.LoginActivity.Companion.usuario
+import com.example.devland.clases.Proyecto
+import com.example.devland.clases.Usuario
 import com.example.devland.fragments.FeedFragment
 
 class LoginActivity : AppCompatActivity() {
@@ -20,6 +23,10 @@ class LoginActivity : AppCompatActivity() {
     lateinit var tvOlvidarPwd: TextView
     lateinit var tvRegistro: TextView
     private var prefs: SharedPreferences? = null
+
+    companion object {
+        var usuario: Usuario? = null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +56,20 @@ class LoginActivity : AppCompatActivity() {
             val password = etPassword!!.text.toString()
 
             if (login(email, password)) {
+
+                usuario = Usuario(1, "Paco", "García", "paco@gmail.com","12345678", false, "Soy un desarrollador de aplicaciones móviles", 0, mutableListOf(), mutableListOf(), mutableListOf(), mutableListOf())
+
+                var proyecto1s = Proyecto(0, "Videojuego Unity", "Un videojuego RPG en 2D", "C#, Videojuegos, SQL", "Malaga", "Presencial", "Español", "5 meses", true, 9,usuario)
+                var proyecto2s = Proyecto(1, "Aplicación Android", "Una aplicación de mensajería", "Kotlin, Android, Firebase", "Malaga", "Presencial", "Español", "3 meses", true, 9,usuario)
+                var proyecto3s = Proyecto(2, "Aplicación iOS", "Una aplicación de mensajería", "Swift, iOS, Firebase", "Malaga", "Presencial", "Español", "3 meses", true, 9, usuario)
+                var proyecto4s = Proyecto(3, "Aplicacion gestora de un supermercado", "Una aplicación para Mercadona", "Java, Android, SQL", "Malaga", "Presencial", "Español", "3 meses", true, 9, usuario)
+                usuario!!.proyectosCreados?.add(proyecto1s)
+                print(usuario!!.proyectosCreados?.size)
+                print(usuario!!.proyectosCreados?.get(0)?.nombre)
+                usuario!!.proyectosCreados?.add(proyecto2s)
+                usuario!!.proyectosCreados?.add(proyecto3s)
+                usuario!!.proyectosCreados?.add(proyecto4s)
+
                 goToFeed()
             }
             guardarPreferencias(email, password)
@@ -64,8 +85,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email: String, password: String): Boolean {
-        //todo: cambiar a false
-        var valido = true
+        var valido = false
         if (!comprobarCorreo(email)) {
             Toast.makeText(
                 this,
@@ -78,8 +98,9 @@ class LoginActivity : AppCompatActivity() {
                 "Contraseña no válida. Ingresa al menos una contraseña de 8 caracteres.",
                 Toast.LENGTH_SHORT
             ).show()
-        } else {
+        } else if (email=="paco@gmail.com" && password=="12345678") {
             valido = true
+
         }
         return valido
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.devland.LoginActivity
 import com.example.devland.MainActivity
 import com.example.devland.R
 
@@ -31,7 +32,7 @@ class PerfilFragment : Fragment() {
         val textViewEmail = view.findViewById<TextView>(R.id.email)
         val textViewDescripcion = view.findViewById<TextView>(R.id.descripcion)
 
-        val usuario = MainActivity.usuario
+        val usuario = LoginActivity.usuario
 
         if (usuario != null) {
             textViewNombre.text = usuario.nombre + " " + usuario.apellidos

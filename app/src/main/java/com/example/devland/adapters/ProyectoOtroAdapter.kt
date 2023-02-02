@@ -33,8 +33,6 @@ class ProyectoOtroAdapter(var listaProyectos:Array<Proyecto>)
         holder.descripcionProyecto.text = listaProyectos[position].descripcion
 
         holder.cardView.setOnClickListener {
-
-
             
             val action = FeedFragmentDirections.actionFeedFragmentToDetallesProyectoOtroFragment(listaProyectos[position])
             holder.itemView.findNavController().navigate(action)
